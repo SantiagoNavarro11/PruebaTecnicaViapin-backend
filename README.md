@@ -40,14 +40,19 @@ Abrir tu gestor de bases de datos (phpMyAdmin, DBeaver, etc.).
 
 Crear una base de datos vacía con el nombre exacto: viapin_users.
 
-Abrir el archivo .env y verificar que los datos de conexión sean correctos (especialmente DB_USERNAME y DB_PASSWORD).
-EJEMPLO DEL .ENV EN ESTAS LINEAS
+Abrir el archivo .env y verificar que los datos de conexión sean correctos.
+EJEMPLO DEL .ENV EN ESTAS LINEAS (Asi deberia verse)
 
 DB_CONNECTION=mysql
+
 DB_HOST=127.0.0.1
+
 DB_PORT=3306
+
 DB_DATABASE=viapin_users
+
 DB_USERNAME=root
+
 DB_PASSWORD=
 
 #Puede reemplazar por los valores que esta viendo o segun los de la maquina.
