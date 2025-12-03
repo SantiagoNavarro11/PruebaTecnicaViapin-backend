@@ -1,59 +1,89 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+ MANUAL DE INSTALACIÓN Y EJECUCIÓN RÁPIDA DEL BACKEND (LARAVEL)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Este manual asume que ya has clonado el repositorio y que la terminal está ubicada en la carpeta raíz del proyecto Laravel (PruebaTecnicaViapin/backend-laravel).
 
-## About Laravel
+📋 Requisitos Mínimos
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Asegúrate de tener instalados y funcionando: PHP (v8.1+), Composer, MySQL (o MariaDB) y Node.js/npm.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+🛠️ Comandos Esenciales de Configuración y Ejecución
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Ejecuta esta secuencia de comandos, uno por uno, en tu terminal:
 
-## Learning Laravel
+PASO 1: Instalar Dependencias
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+#Despues de clonar el repositorio en la carpeta que usted desee, debe :
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Instala las librerías de Laravel y las dependencias de Node.js (necesarias para herramientas de desarrollo).
 
-## Laravel Sponsors
+# 1. Instala las librerías principales de PHP (Laravel, etc.)
+Este comando debe ejecutarlo dentro del proyecto que acabo de clonar .
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+composer install
 
-### Premium Partners
+# 2. Instala las dependencias de Node.js (generalmente usadas para Vite/Mix)
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+npm install
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+PASO 2: Configurar el Entorno
 
-## Code of Conduct
+Genera el archivo de configuración local y la clave de seguridad de la aplicación.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# 1. Copia el archivo de configuración de ejemplo
+cp .env.example .env
 
-## Security Vulnerabilities
+# 2. Genera la clave de seguridad única (APP_KEY)
+php artisan key:generate
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
+PASO 3: Configurar y Crear la Base de Datos
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Antes de continuar, debes:
+
+Abrir tu gestor de bases de datos (phpMyAdmin, DBeaver, etc.).
+
+Crear una base de datos vacía con el nombre exacto: viapin_users.
+
+Abrir el archivo .env y verificar que los datos de conexión sean correctos.
+EJEMPLO DEL .ENV EN ESTAS LINEAS (Asi deberia verse)
+
+DB_CONNECTION=mysql
+
+DB_HOST=127.0.0.1
+
+DB_PORT=3306
+
+DB_DATABASE=viapin_users
+
+DB_USERNAME=root
+
+DB_PASSWORD=
+
+#Puede reemplazar por los valores que esta viendo o segun los de la maquina.
+
+PASO 4: Inicializar la Base de Datos
+
+Ejecuta las migraciones (crea tablas) y los seeders (carga datos iniciales o de prueba).
+
+# Ejecuta las migraciones y los seeders
+php artisan migrate (ese para la tabla)    
+
+php artisan migrate --seed (este para el contenido)
+
+
+#Aqui ya debe poder mirar los datos iniciales en la base de datos y puede prender el server.
+
+PASO 5: Iniciar el Servidor API
+
+Levanta el servidor de desarrollo de Laravel. La API estará lista para ser consumida por el Frontend.
+
+# Inicia el servidor de desarrollo en [http://127.0.0.1:8000](http://127.0.0.1:8000)
+php artisan serve
+
+Puede probar despues del 8000 completando la URL ASI 127.0.0.1:8000/api/users/ 
+
+
+✅ FINALIZADO:
+
+La API RESTful está operativa en http://127.0.0.1:8000. Ya puedes iniciar el Frontend de Angular para empezar a interactuar con el CRUD.
