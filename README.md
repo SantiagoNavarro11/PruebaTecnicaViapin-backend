@@ -12,12 +12,17 @@ Ejecuta esta secuencia de comandos, uno por uno, en tu terminal:
 
 PASO 1: Instalar Dependencias
 
+#Despues de clonar el repositorio en la carpeta que usted desee, debe :
+
 Instala las librerías de Laravel y las dependencias de Node.js (necesarias para herramientas de desarrollo).
 
 # 1. Instala las librerías principales de PHP (Laravel, etc.)
+Este comando debe ejecutarlo dentro del proyecto que acabo de clonar .
+
 composer install
 
 # 2. Instala las dependencias de Node.js (generalmente usadas para Vite/Mix)
+
 npm install
 
 
@@ -62,7 +67,9 @@ PASO 4: Inicializar la Base de Datos
 Ejecuta las migraciones (crea tablas) y los seeders (carga datos iniciales o de prueba).
 
 # Ejecuta las migraciones y los seeders
-php artisan migrate (ese para la tabla)          php artisan migrate --seed (este para el contenido)
+php artisan migrate (ese para la tabla)    
+
+php artisan migrate --seed (este para el contenido)
 
 
 #Aqui ya debe poder mirar los datos iniciales en la base de datos y puede prender el server.
@@ -73,6 +80,8 @@ Levanta el servidor de desarrollo de Laravel. La API estará lista para ser cons
 
 # Inicia el servidor de desarrollo en [http://127.0.0.1:8000](http://127.0.0.1:8000)
 php artisan serve
+
+Puede probar despues del 8000 completando la URL ASI 127.0.0.1:8000/api/users/ 
 
 
 ✅ FINALIZADO:
