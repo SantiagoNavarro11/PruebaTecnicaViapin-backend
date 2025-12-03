@@ -68,7 +68,6 @@ class UserRequest extends FormRequest
     {
         return [
             'nombre_completo.required' => 'El nombre completo es obligatorio',
-            // ... (Resto de mensajes personalizados para claridad)
             'email.required' => 'El correo es obligatorio',
             'email.email' => 'Formato de correo inválido',
             'email.unique' => 'El correo ya existe',

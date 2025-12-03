@@ -12,7 +12,7 @@ class UsersTableSeeder extends Seeder
     {
         DB::table('users')->insert([
             [
-                'nombre_completo' => 'David Santiago',
+                'nombre_completo' => 'David Santiago Navarro',
                 'email' => 'Santiago@gmail.com',
                 'departamento' => 'Software',
                 'telefono' => '3107764463',
@@ -22,7 +22,7 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'nombre_completo' => 'Edisson Lopez',
+                'nombre_completo' => 'Edisson Gutierrez Otalora',
                 'email' => 'Edisson@gmail.com',
                 'departamento' => 'Lider en Desarrollo',
                 'telefono' => '123124512',
