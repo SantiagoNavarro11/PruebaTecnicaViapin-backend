@@ -50,14 +50,17 @@ DB_DATABASE=viapin_users
 DB_USERNAME=root
 DB_PASSWORD=
 
+#Puede reemplazar por los valores que esta viendo o segun los de la maquina.
 
 PASO 4: Inicializar la Base de Datos
 
 Ejecuta las migraciones (crea tablas) y los seeders (carga datos iniciales o de prueba).
 
 # Ejecuta las migraciones y los seeders
-php artisan migrate --seed
+php artisan migrate (ese para la tabla)          php artisan migrate --seed (este para el contenido)
 
+
+#Aqui ya debe poder mirar los datos iniciales en la base de datos y puede prender el server.
 
 PASO 5: Iniciar el Servidor API
 
